@@ -1,6 +1,9 @@
 import { Product } from "../lib/types";
+import { data } from "../mocks/data.json";
 
-export default function Products({ products }: { products: Product[] }) {
+export default function Products() {
+  const products: Product[] = data.products;
+
   return (
     <section className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5  justify-items-center">
       {products.map((product) => (
@@ -23,7 +26,7 @@ export default function Products({ products }: { products: Product[] }) {
           <div className="flex flex-col gap-5">
             <main>
               <section className="flex gap-2 justify-center items-center">
-                <span className="text-lg">{product.product_price}</span>
+                <span className="text-3xl">{product.product_price}</span>
                 {product.product_original_price && (
                   <span className="line-through text-sm">
                     {product.product_original_price}
